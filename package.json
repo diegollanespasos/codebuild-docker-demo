@@ -6,7 +6,8 @@
   "scripts": {
     "prettify": "prettier -l --write \"**/*.js\"",
     "test": "jest",
-    "dev": "nodemon src/index.js"
+    "dev": "nodemon src/index.js",
+    "cloudformation:build": "cd cloudformation && npm run build"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
