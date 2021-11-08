@@ -12,7 +12,6 @@ const config = {
   // Non configurable on stack creation:
   appName: "cloudformation-app",
   env: "production",
-  s3DeletionPolicy: "Retain",
 };
 
 module.exports = {

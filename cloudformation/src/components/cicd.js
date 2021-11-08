@@ -117,6 +117,11 @@ module.exports = config => ({
             Type: "PLAINTEXT",
             Value: { Ref: "AwsAccountId" },
           },
+          {
+            Name: "AWS_REGION",
+            Type: "PLAINTEXT",
+            Value: `${config.awsRegion}`,
+          },
         ],
       },
       Source: {

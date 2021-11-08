@@ -43,46 +43,6 @@
     }
   },
   "Resources": {
-    "appFilesBucket": {
-      "Type": "AWS::S3::Bucket",
-      "Properties": {
-        "AccessControl": "Private",
-        "BucketName": "dev-kportalapp-files-bucket",
-        "CorsConfiguration": {
-          "CorsRules": [
-            {
-              "AllowedHeaders": [
-                "*"
-              ],
-              "AllowedMethods": [
-                "PUT",
-                "GET"
-              ],
-              "AllowedOrigins": [
-                "*"
-              ],
-              "ExposedHeaders": [],
-              "MaxAge": 3000
-            }
-          ]
-        },
-        "Tags": [
-          {
-            "Key": "Name",
-            "Value": "dev-kportalapp-files-bucket"
-          },
-          {
-            "Key": "Project",
-            "Value": "kportalapp"
-          },
-          {
-            "Key": "Env",
-            "Value": "dev"
-          }
-        ]
-      },
-      "DeletionPolicy": "Delete"
-    },
     "appContainerRepository": {
       "Type": "AWS::ECR::Repository",
       "Properties": {
@@ -213,6 +173,11 @@
               "Value": {
                 "Ref": "AwsAccountId"
               }
+            },
+            {
+              "Name": "AWS_REGION",
+              "Type": "PLAINTEXT",
+              "Value": "us-east-2"
             }
           ]
         },

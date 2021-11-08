@@ -43,46 +43,6 @@
     }
   },
   "Resources": {
-    "appFilesBucket": {
-      "Type": "AWS::S3::Bucket",
-      "Properties": {
-        "AccessControl": "Private",
-        "BucketName": "production-cloudformation-app-files-bucket",
-        "CorsConfiguration": {
-          "CorsRules": [
-            {
-              "AllowedHeaders": [
-                "*"
-              ],
-              "AllowedMethods": [
-                "PUT",
-                "GET"
-              ],
-              "AllowedOrigins": [
-                "*"
-              ],
-              "ExposedHeaders": [],
-              "MaxAge": 3000
-            }
-          ]
-        },
-        "Tags": [
-          {
-            "Key": "Name",
-            "Value": "production-cloudformation-app-files-bucket"
-          },
-          {
-            "Key": "Project",
-            "Value": "cloudformation-app"
-          },
-          {
-            "Key": "Env",
-            "Value": "production"
-          }
-        ]
-      },
-      "DeletionPolicy": "Retain"
-    },
     "appContainerRepository": {
       "Type": "AWS::ECR::Repository",
       "Properties": {
@@ -213,6 +173,11 @@
               "Value": {
                 "Ref": "AwsAccountId"
               }
+            },
+            {
+              "Name": "AWS_REGION",
+              "Type": "PLAINTEXT",
+              "Value": "us-east-2"
             }
           ]
         },

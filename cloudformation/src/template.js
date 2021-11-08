@@ -1,6 +1,5 @@
 "use strict";
 const parameters = require("./components/parameters");
-const storage = require("./components/storage");
 const cicd = require("./components/cicd");
 
 /*
@@ -13,7 +12,6 @@ module.exports = async config => ({
   Description: `Base Environment Configuration for ${config.appName}`,
   Parameters: await parameters(config),
   Resources: {
-    ...storage(config),
     ...cicd(config),
   },
   Outputs: {},
